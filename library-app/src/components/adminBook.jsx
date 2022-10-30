@@ -1,16 +1,12 @@
 import {
     Tr,
     Td,
-    useDisclosure,
     Image,
     Button,
     useToast,
   } from "@chakra-ui/react"
-  import { useSelector } from "react-redux"
   import { axiosInstance } from "../api"
-  import { useState } from "react"
   import { useEffect } from "react"
-  import DetailPage from "../pages/DetailBook"
   import { Link } from "react-router-dom"
   
   const AdminBook = ({
@@ -23,20 +19,9 @@ import {
     language,
     fetchBooks
   }) => {
-    const authSelector = useSelector((state) => state.auth)
-  
-    const { isOpen, onOpen, onClose } = useDisclosure()
-  
-    // const confirmDeleteBtnHandler = () => {
-    //   onClose()
-    //   onDelete()
-    // }
   
     const toast = useToast()
-  
-    const [book, setBook] = useState([])
-  //   const [addBook, setAddBook] = useState()
-  
+    
     const destroyBook = async () => {
       try {
         await axiosInstance.delete(`/book/${id}`)
@@ -47,7 +32,7 @@ import {
         toast({ title: "Please login first", status: "error" })
       }
     } 
-  
+    
     const removeBookBtn = () => {
       destroyBook()
     }
@@ -72,6 +57,9 @@ import {
           <Td>{genre}</Td>
           <Td>{language}</Td>
           <Td>
+            <Link to={`/admin/detail/${id}`}>
+            <Button colorScheme="green" >Edit Book</Button>
+            </Link>
             <Button onClick = {removeBookBtn} colorScheme="red" >Remove Book</Button>
           </Td>
         </Tr>

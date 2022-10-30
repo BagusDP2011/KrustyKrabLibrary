@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import { axiosInstance } from "../api";
 import { useState } from "react";
 import { useEffect } from "react";
-import DetailPage from "../pages/DetailBook";
 import { Link } from "react-router-dom";
 
 
@@ -89,7 +88,7 @@ const BookCollection = ({
         <Td>{genre}</Td>
         <Td>{language}</Td>
         <Td>
-          <Button onClick={addToCartBtn}>Add</Button>
+          <Button onClick={addToCartBtn} colorScheme={"green"}>Add</Button>
         </Td>
       </Tr>
     </>

@@ -24,7 +24,6 @@ import {
 } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { axiosInstance } from "../api"
-import BookCollection from "../components/bookCollection"
 import { CgChevronLeft, CgChevronRight } from "react-icons/cg"
 import AdminBook from "../components/adminBook"
 
@@ -51,7 +50,7 @@ const BookAdmin = () => {
                 },
             })
             setRows(collection.data.totalRows)
-            setMaxPage(Math.ceil(collection.data.totalRows) / maxItemsPage)
+            setMaxPage(Math.ceil((collection.data.totalRows) / maxItemsPage))
 
             if (pages === 1) {
                 setBook(collection.data.data)
@@ -89,14 +88,6 @@ const BookAdmin = () => {
             )
         })
     }
-
-    const deleteBook = () => {
-        
-    }
-
-    const addBook = () => {}
-
-    const updateBook = () => {}
 
     const searchKey = () => {
         // event.preventDevault()
@@ -166,14 +157,14 @@ const BookAdmin = () => {
                             <Th>Release Year</Th>
                             <Th>Genre</Th>
                             <Th>Language</Th>
-                            <Th>Cart</Th>
+                            <Th>Action</Th>
                         </Tr>
                     </Thead>
                     <Tbody>{renderBooks()}</Tbody>
                 </Table>
             </TableContainer>
             <Text>
-                Page: {pages} of {maxPage}
+                Page: {pages +1} of {maxPage}
             </Text>
             <Grid templateColumns={"repeat(3, 1fr"} mt={15}>
                 <GridItem />
@@ -191,8 +182,8 @@ const BookAdmin = () => {
                                 {""}
                             </CgChevronLeft>
                         )}
-                        <Text fontSize={"md"}>{pages}</Text>
-                        {pages >= maxPage ? null : (
+                        <Text fontSize={"md"}>{(pages) +1}</Text>
+                        {pages >= (maxPage-1) ? null : (
                             <CgChevronRight
                                 onClick={nextPage}
                                 color={"#9E7676"}

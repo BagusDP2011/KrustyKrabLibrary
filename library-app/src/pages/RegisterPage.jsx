@@ -76,6 +76,8 @@ const RegisterPage = () => {
                 <Input
                   value={formik.values.NIM}
                   name="NIM"
+                  backgroundColor={"white"}
+                  color={"black"}
                   onChange={formChangeHandler}
                 />
                 <FormErrorMessage>{formik.errors.NIM}</FormErrorMessage>
@@ -85,6 +87,8 @@ const RegisterPage = () => {
                 <Input
                   value={formik.values.username}
                   name="username"
+                  backgroundColor={"white"}
+                  color={"black"}
                   onChange={formChangeHandler}
                 />
                 <FormErrorMessage>{formik.errors.username}</FormErrorMessage>
@@ -96,6 +100,8 @@ const RegisterPage = () => {
                   name="email"
                   onChange={formChangeHandler}
                   type="email"
+                  backgroundColor={"white"}
+                  color={"black"}
                 />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
@@ -106,6 +112,8 @@ const RegisterPage = () => {
                   name="password"
                   onChange={formChangeHandler}
                   type="password"
+                  backgroundColor={"white"}
+                  color={"black"}
                 />
                 <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
               </FormControl>

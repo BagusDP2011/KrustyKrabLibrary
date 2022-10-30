@@ -24,7 +24,6 @@ import { CgChevronLeft, CgChevronRight } from "react-icons/cg"
 
 const Book = () => {
   const [book, setBook] = useState([])
-  const [page, setPage] = useState(1)
   const [pages, setPages] = useState(0)
   const [rows, setRows] = useState(0)
   const [keyword, setKeyword] = useState("")
@@ -110,9 +109,13 @@ const Book = () => {
             <Input
               name="input"
               value={keywordHandler}
+              placeholder={"Tuliskan apa yang kamu cari (Judul/Genre)"}
               onChange={(event) => setKeywordHandler(event.target.value)}
             />
-            <Button onClick={searchKey} mr={0}>
+            <Button 
+            onClick={searchKey} 
+            mr={0}
+            >
               Search
             </Button>
           </FormControl>

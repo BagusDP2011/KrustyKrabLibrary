@@ -22,7 +22,7 @@ const AdminDashboard = () => {
         </Box>
         <Box flex={1}>
           <VStack>
-            <Link to="/admin/book"><Button>Add new book</Button></Link>
+            <Link to="/admin/addbook"><Button>Add new book</Button></Link>
             <Link to="/admin/book"><Button>Edit book details</Button></Link>
             <Link to="/admin/book"><Button>Delete books</Button></Link>
           </VStack>

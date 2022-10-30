@@ -62,6 +62,8 @@ const App = () => {
         <>
           <Route path="/admin/detail/:bookId" element={<DetailBookAdmin />} />
           <Route path="/admin/book" element={<BookAdmin />} />
+          <Route path="/admin/addbook" element={<AddBook />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </>
       )
     }
@@ -244,8 +246,7 @@ const App = () => {
         <Route path="/borrowed" element={<BorrowedBook />} />
         <Route path="/profil" element={<Profil />} />
         {/* <Route path="/book_admin" element={<BookAdmin />} /> */}
-        <Route path="/addbook" element={<AddBook />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        
         {renderAdminRoutes()}
       </Routes>
 
